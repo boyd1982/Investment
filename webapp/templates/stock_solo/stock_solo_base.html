@@ -1,0 +1,55 @@
+{% extends "stock_base.html" %}
+{% block current_user %}
+    <div class="panel panel-default">
+        <div class="panel-body" style="width: 100px;float: left;background-color: black;color: white">
+            当前用户：
+        </div>
+        <div class="panel-body" style="width: 200px;float: left;color: white;background-color: black">
+            {{ current_user.username }}
+        </div>
+
+    </div>
+{% endblock %}
+{% block body %}
+    <div>
+    {% block form %} {% endblock %}
+
+    </div>
+
+    <ul id="myTab" class="nav nav-pills">
+        <li><a href="#basic" data-toggle="tab">基本情况</a></li>
+        <li><a href="#finance_data" data-toggle="tab">财务数据及分析</a></li>
+        <li><a href="#invest_value" data-toggle="tab">投资价值分析</a></li>
+        <li><a href="#draw_picture" data-toggle="tab">制图数据</a></li>
+        <li><a href="#picture_analysis" data-toggle="tab">图表分析</a></li>
+    </ul>
+    <script>
+        $(function () {
+            $('#myTab li:eq(0) a').tab('show');
+        });
+    </script>
+    <!-- 以下对应四个板块-->
+    <div id="myTabContent" class="tab-content" style="border-top:1px solid #000">
+        <div class="tab-pane fade in active" id="basic" style="height:60%;">
+            {% block basic %}{% endblock %}
+        </div>
+
+        <div class="tab-pane fade" id="finance_data" style="height:60%;">
+            {% block finance_data %}{% endblock %}
+        </div>
+
+        <div class="tab-pane fade" id="invest_value" style="height:60%;">
+            {% block invest_value %}{% endblock %}
+        </div>
+
+        <div class="tab-pane fade" id="draw_picture" style="height:60%;">
+            {% block draw_picture %}{% endblock %}
+        </div>
+
+        <div class="tab-pane fade" id="picture_analysis" style="height:60%;">
+            {% block picture_analysis %}{% endblock %}
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "stock_base.html" %}
+{% block current_user %}
+   <div class="panel panel-default">
+        <div class="panel-body" style="width: 100px;float: left;background-color: black;color: white">
+            当前用户：
+        </div>
+        <div class="panel-body" style="width: 200px;float: left;color: white;background-color: black">
+            {{ current_user.username }}
+        </div>
+
+    </div>
+{% endblock %}
+{% block body %}
+    {% for role in roles %}
+        {% if role.id == 2 %}
+            <a href="{{ url_for('stock_solo.home') }}">
+                <div class="panel panel-primary" style="height:40%;float: left;width: 15%;margin-left: 2%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">分析体系</h3>
+                    </div>
+                    <div class="panel-body">
+                        这是分析体系
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+        {% if role.id == 3 %}
+            <a href="{{ url_for('stock_solo.home') }}">
+                <div class="panel panel-success" style="height:40%;float: left;width: 15%;margin-left: 2%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">计算体系</h3>
+                    </div>
+                    <div class="panel-body">
+                        这是计算体系
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+        {% if role.id == 4 %}
+            <a href="{{ url_for('stock_solo.home') }}">
+                <div class="panel panel-info" style="height:40%;float: left;width: 15%;margin-left: 2%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">表现体系</h3>
+                    </div>
+                    <div class="panel-body">
+                        这是表现体系
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+        {% if role.id == 5 %}
+            <a href="{{ url_for('stock_solo.home') }}">
+                <div class="panel panel-warning" style="height:40%;float: left;width: 15%;margin-left: 2%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">决策体系</h3>
+                    </div>
+                    <div class="panel-body">
+                        这是决策体系
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+        {% if role.id == 6 %}
+            <a href="{{ url_for('stock_solo.home') }}">
+                <div class="panel panel-danger" style="height:40%;float: left;width: 15%;margin-left: 2%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">交易体系</h3>
+                    </div>
+                    <div class="panel-body">
+                        这是交易体系
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+        {% if role.id == 7 %}
+            <a href="{{ url_for('stock_solo.home') }}">
+                <div class="panel panel-primary" style="height:40%;float: left;width: 15%;margin-left: 2%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">评价体系</h3>
+                    </div>
+                    <div class="panel-body">
+                        这是评价体系
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

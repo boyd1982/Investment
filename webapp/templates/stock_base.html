@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
+<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid" id="LG" style="width: 90%;margin: auto;margin-top: 1%;">
+
+    <div class="navbar">
+        <div class="navbar-inner" >
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-target=".navbar-responsive-collapse" data-toggle="collapse"></a> <a class="brand" href="#"><font style="font-weight: bold">金融投资分析系统</font></a>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav nav-pills">
+                                {% block current_user %}{% endblock %}
+                            </ul>
+
+                    <ul class="nav pull-right">
+								<li class="divider-vertical">
+								</li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#">账户设置</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">登录</a>
+										</li>
+										<li>
+											<a href="#">设置</a>
+										</li>
+										<li>
+											<a href="#">其他</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="{{ url_for('main.logout') }}">注销账户</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 1px">
+        {% block body %}{% endblock %}
+    </div>
+
+</div>
+</body>
+</html>
