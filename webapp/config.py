@@ -6,3 +6,8 @@ class DevConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:1234@localhost:3306/test'
     SECRET_KEY = 'you-will-never-guess'
+    MONGODB_SETTINGS={
+        'db':'stocks',
+        'host':'localhost',
+        'port':27017
+    }

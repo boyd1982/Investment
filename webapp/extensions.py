@@ -8,8 +8,8 @@ login_manager.login_message_category = "info"
 
 @login_manager.user_loader
 def load_user(username):
-    from models import users
-    return users.query.get(username)
+    from models import User
+    return User.objects(username=username).first()
 
 from flask_principal import Principal,Permission,RoleNeed
 principals = Principal()

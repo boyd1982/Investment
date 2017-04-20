@@ -2,7 +2,7 @@ import os
 from flask_script import Manager,Server
 from flask_migrate import Migrate,MigrateCommand
 from webapp import create_app
-from webapp.models import db, roles,users
+from webapp.models import db, roles,users,mongo,User,stock_basics
 
 #test git tools
 env = os.environ.get('WEBAPP_ENV','dev')
@@ -12,6 +12,6 @@ manager = Manager(app)
 manager.add_command("server",Server())
 @manager.shell
 def make_shell_context():
-    return dict(app=app,db=db,users=users,roles=roles)
+    return dict(app=app,db=db,mongo=mongo,users=users,roles=roles,User=User,stock_basics=stock_basics)
 if __name__=="__main__":
     manager.run()

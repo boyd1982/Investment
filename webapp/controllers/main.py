@@ -1,6 +1,6 @@
 from flask import Blueprint,redirect,url_for,flash,render_template
 from webapp.forms import LoginForm,RegisterForm
-from webapp.models import users,db
+from webapp.models import User,mongo
 from flask_login import login_user,login_required,logout_user,current_user,current_app
 from flask_principal import Identity,AnonymousIdentity,identity_changed
 main_blueprint = Blueprint(
@@ -17,7 +17,7 @@ def index():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = users.query.filter_by(username=form.username.data).one()
+        user = User.objects(username=form.username.data).first()
         login_user(user,remember=form.remember.data)
         identity_changed.send(
             current_app._get_current_object(),
@@ -31,11 +31,10 @@ def login():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        new_user = users()
+        new_user = User()
         new_user.username = form.username.data
         new_user.set_password(form.password.data)
-        db.session.add(new_user)
-        db.session.commit()
+        new_user.save()
         flash(
             "Your user has been created, please login",
             category="success"

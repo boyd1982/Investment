@@ -12,7 +12,7 @@
 {% endblock %}
 {% block body %}
     {% for role in roles %}
-        {% if role.id == 2 %}
+        {% if role == 'finance_analyst' %}
             <a href="{{ url_for('stock_solo.home') }}">
                 <div class="panel panel-primary" style="height:40%;float: left;width: 15%;margin-left: 2%">
                     <div class="panel-heading">
@@ -24,7 +24,7 @@
                 </div>
             </a>
         {% endif %}
-        {% if role.id == 3 %}
+        {% if role == 'admin' %}
             <a href="{{ url_for('stock_solo.home') }}">
                 <div class="panel panel-success" style="height:40%;float: left;width: 15%;margin-left: 2%">
                     <div class="panel-heading">
@@ -36,7 +36,7 @@
                 </div>
             </a>
         {% endif %}
-        {% if role.id == 4 %}
+        {% if role == 'admin' %}
             <a href="{{ url_for('stock_solo.home') }}">
                 <div class="panel panel-info" style="height:40%;float: left;width: 15%;margin-left: 2%">
                     <div class="panel-heading">
@@ -48,7 +48,7 @@
                 </div>
             </a>
         {% endif %}
-        {% if role.id == 5 %}
+        {% if role == 'admin' %}
             <a href="{{ url_for('stock_solo.home') }}">
                 <div class="panel panel-warning" style="height:40%;float: left;width: 15%;margin-left: 2%">
                     <div class="panel-heading">
@@ -60,7 +60,7 @@
                 </div>
             </a>
         {% endif %}
-        {% if role.id == 6 %}
+        {% if role == 'admin' %}
             <a href="{{ url_for('stock_solo.home') }}">
                 <div class="panel panel-danger" style="height:40%;float: left;width: 15%;margin-left: 2%">
                     <div class="panel-heading">
@@ -72,7 +72,7 @@
                 </div>
             </a>
         {% endif %}
-        {% if role.id == 7 %}
+        {% if role == 'admin' %}
             <a href="{{ url_for('stock_solo.home') }}">
                 <div class="panel panel-primary" style="height:40%;float: left;width: 15%;margin-left: 2%">
                     <div class="panel-heading">
